@@ -1,3 +1,40 @@
-.test {
-    
+* {
+    margin: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+.main {
+    margin: 0 auto;
+    padding: 15px;
+    max-width: 1000px;
+}
+
+.section {
+    scroll-margin-top: 10000000px;
+    display: none;
+}
+
+.section_active {
+    display: block;
+}
+
+.quote {
+    font-style: italic;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+/* временные стили для удобства отладки */
+
+.section {
+    margin-top: 20px;
+}
+
+p {
+    margin-top: 5px;
 }
