@@ -18,7 +18,7 @@ window.onhashchange = updateSection
 function updateSection() {
     
     document.addEventListener('transitionend', show, {once: true})
-    document.body.classList.add('body_sections-hidden')    
+    document.body.classList.add('body_sections-hidden'); 
     
     function show(){
         if (activeSection) {
