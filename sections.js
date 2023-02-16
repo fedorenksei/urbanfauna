@@ -16,21 +16,32 @@ updateSection()
 window.onhashchange = updateSection
 
 function updateSection() {
-    
+    if (!activeSection) {
+        setNewSection()
+        return
+    }
+
     document.addEventListener('transitionend', show, {once: true})
-    document.body.classList.add('body_sections-hidden'); 
+    document.body.classList.add('body_sections-hidden')
     
     function show(){
         if (activeSection) {
             activeSection.classList.remove(activeClass)
         }
+
+        setNewSection()
         
-        const newHash = location.hash
-        const sectionName = newHash.replace('#', '') || 'home'
-        const section = sections[sectionName]
-        section.classList.add(activeClass)
-        activeSection = section
-        
-        setTimeout(function(){document.body.classList.remove('body_sections-hidden')}, 0)
+        setTimeout(function(){
+            document.body.classList.remove('body_sections-hidden')
+        }, 0)
     }
+
+}
+
+function setNewSection() {
+    const newHash = location.hash
+    const sectionName = newHash.replace('#', '') || 'home'
+    const section = sections[sectionName]
+    section.classList.add(activeClass)
+    activeSection = section
 }
