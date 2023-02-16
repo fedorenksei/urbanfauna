@@ -10,14 +10,6 @@
     max-width: 1000px;
 }
 
-.section {
-    scroll-margin-top: 10000000px;
-    display: none;
-}
-
-.section_active {
-    display: block;
-}
 
 .quote {
     font-style: italic;
@@ -26,6 +18,27 @@
 .footer {
     display: flex;
     justify-content: space-evenly;
+}
+
+
+/* Switching sections */
+
+.section {
+    /* scroll-margin-top: 999999px; */
+    display: none;
+}
+
+.section_active {
+    display: block;
+}
+
+* {
+    transition: opacity 0.1s;
+}
+
+.body_sections-hidden .header ~ *,
+.body_sections-hidden .footer {
+    opacity: 0;
 }
 
 
