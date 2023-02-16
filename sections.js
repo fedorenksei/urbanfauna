@@ -29,29 +29,30 @@ function updateSection() {
         }
 
         setNewSection()
+        getSectionByHash().scrollIntoView()
         
         setTimeout(function(){
             document.body.classList.remove(bodyHiddenClass)
         }, 0)
     }
-
 }
 
 function setNewSection() {
-    const section = getSectionToActivate()
+    const section = getSectionByHash()
     section.classList.add(activeClass)
     activeSection = section
 }
 
 for (const link of document.querySelectorAll('.section-link')) {
+    const section = getSectionByHash(link.getAttribute('href'))
     link.addEventListener('click', function() {
-        getSectionToActivate().scrollIntoView()
+        section.scrollIntoView()
     })
 }
 
-function getSectionToActivate() {
-    const newHash = location.hash
-    const sectionName = newHash.replace('#', '') || 'home'
+function getSectionByHash(hash) {
+    if (!hash) hash = location.hash
+    const sectionName = hash.replace('#', '') || 'home'
     const section = sections[sectionName]
     return section
 }
