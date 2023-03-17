@@ -23,7 +23,6 @@ class Slider {
     function adjustHeight() {
         const image = slides[currentSlide - 1].querySelector('img')
         if (image.complete && image.clientHeight != 0 && image.clientHeight != image.naturalHeight) {
-            console.log(image.clientHeight)
             slider.style.height = slides[currentSlide - 1].clientHeight + 'px'
         } else {
             // setTimeout(adjustHeight, '100')
