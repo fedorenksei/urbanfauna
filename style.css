@@ -1,18 +1,40 @@
-* {
+*,
+*::after,
+*::before {
     margin: 0;
     scroll-behavior: smooth;
     box-sizing: border-box;
 }
 
-.main {
-    margin: 0 auto;
-    padding: 15px;
-    max-width: 1000px;
+.body {
+    font: 16px/22.4px "Times New Roman",Times,serif;
+    background-color: hsla(0, 0%, 100%, .9);
 }
 
+.common-text,
+.slider {
+    padding: 0 16px 14px 16px;
+}
+
+@media (min-width: 633px) {
+    .body {
+        font-size: 20px;
+    }
+
+    .common-text {
+        padding-right: 0;
+        padding-left: 0;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
 
 .quote {
     font-style: italic;
+}
+
+.slide__description {
+    color: grey;
 }
 
 .footer {
@@ -58,7 +80,6 @@ p {
     display: flex;
     align-items: start;
     width: 100%;
-    transform: none;
     transition: 
         transform 0.3s, 
         height 0.3s;
@@ -75,5 +96,18 @@ p {
 }
 
 .slider__slide img {
+    display: block;
     width: 100%;
+}
+
+@media (min-width: 633px) {
+    .slider__slide {
+        padding: 0 48px;
+    }
+
+    .slider__slide img,
+    .slide__description {
+        max-width: 1004px;
+        margin: 0 auto;
+    }
 }
