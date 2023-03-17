@@ -71,4 +71,9 @@ p {
 
 .slider__slide {
     width: 100%;
+    flex-shrink: 0;
+}
+
+.slider__slide img {
+    width: 100%;
 }
